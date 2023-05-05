@@ -47,9 +47,13 @@ capture mkdir jpg
 
 * Run do files 
 
+clear
+
 cd "$main_folder/dofiles"
 
 do "dofile_loop_data-estimation.do"	
+
+
 
 
 
