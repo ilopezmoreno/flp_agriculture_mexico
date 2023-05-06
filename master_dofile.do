@@ -6,54 +6,21 @@ global enoe_data "C:\Users\d57917il\Documents\1paper1\5_ENOE_databases\Bases ENO
 
 
 
- 
-* Create folders 
-cd "$main_folder"
-capture mkdir documentation 
-capture mkdir data 
-capture mkdir dofiles 
-capture mkdir outputs
-
-cd "$main_folder/documentation"
-capture mkdir codebooks
-capture mkdir dictionaries
-
-cd "$main_folder/data"
-capture mkdir store_collapse 
-capture mkdir tempfiles 
-capture mkdir final_datasets
-
-cd "$main_folder/data/store_collapse"
-capture mkdir agri_machinery 
-capture mkdir labor_demand 
-capture mkdir count_flp_agri
-capture mkdir pct_flp_agri
-capture mkdir final_datasets
-
-cd "$main_folder/outputs"
-capture mkdir graphs
-capture mkdir tables 
-capture mkdir tabulations  
-capture mkdir regressions 
-  
-cd "$main_folder/outputs/graphs"
-capture mkdir gph
-capture mkdir jpg 
-
-
-
-
-
-
 * Run do files 
 
 clear
 
 cd "$main_folder/dofiles"
+do "folder_creation.do" // To create all the folders 
 
-do "dofile_loop_data-estimation.do"	
+cd "$main_folder/dofiles"
+do "data-estimation_labor-demand.do"
+	
+cd "$main_folder/dofiles"
+do "data-transformation_labor-demand.do"
 
-
+do "data-estimation_agri-machinery.do"
+do "data-transformation_agri-machinery.do"
 
 
 
