@@ -119,7 +119,7 @@ restore
 * Estimate the percentage of women that are not working due to lack of labour demand at the NATIONAL LEVEL. 
 * The obtained dataset will show the NATIONAL AVERAGE in each quarter
 preserve
-collapse (mean) w_labor_demand [fweight=fac], by(per_ent)
+collapse (mean) w_labor_demand [fweight=fac], by(per)
 save "$national\national_labor_demand_`year_quarter'.dta", replace
 tempfile national_labor_demand_`year_quarter'
 save "`national_labor_demand_`year_quarter''"
@@ -162,7 +162,7 @@ append using "`state_labor_demand_`i''"
 forvalues i=405(1)419 {
 append using "`state_labor_demand_`i''"	
 }	
-save "$main_folder/data/final_datasets/state_labor_demand_2005_2019_tempfiles.dta", replace
+save "$main_folder/data/final_datasets/raw/state_labor_demand_2005_2019_tempfiles.dta", replace
 
 * 2nd dataset: STATE - ONLY RURAL AREAS
 use "`state_rural_labor_demand_105'", clear	
@@ -178,7 +178,7 @@ append using "`state_rural_labor_demand_`i''"
 forvalues i=405(1)419 {
 append using "`state_rural_labor_demand_`i''"	
 }	
-save "$main_folder/data/final_datasets/state_rural_labor_demand_2005_2019_tempfiles.dta", replace
+save "$main_folder/data/final_datasets/raw/state_rural_labor_demand_2005_2019_tempfiles.dta", replace
 
 * 3rd dataset: NATIONAL - RURAL & URBAN AREAS
 use "`national_labor_demand_105'", clear	
@@ -194,7 +194,7 @@ append using "`national_labor_demand_`i''"
 forvalues i=405(1)419 {
 append using "`national_labor_demand_`i''"	
 }	
-save "$main_folder/data/final_datasets/national_labor_demand_2005_2019_tempfiles.dta", replace
+save "$main_folder/data/final_datasets/raw/national_labor_demand_2005_2019_tempfiles.dta", replace
 
 * 4th dataset: NATIONAL - ONLY RURAL AREAS 
 use "`national_rural_labor_demand_105'", clear	
@@ -210,7 +210,7 @@ append using "`national_rural_labor_demand_`i''"
 forvalues i=405(1)419 {
 append using "`national_rural_labor_demand_`i''"	
 }	
-save "$main_folder/data/final_datasets/national_rural_labor_demand_2005_2019_tempfiles.dta", replace
+save "$main_folder/data/final_datasets/raw/national_rural_labor_demand_2005_2019_tempfiles.dta", replace
 
 
 
@@ -232,7 +232,7 @@ append using "$state\state_labor_demand_`i'.dta"
 forvalues i=405(1)419 {
 append using "$state\state_labor_demand_`i'.dta"	
 }
-save "$main_folder/data/final_datasets/state_labor_demand_2005_2019_storecollapse.dta", replace
+save "$main_folder/data/final_datasets/raw/state_labor_demand_2005_2019_storecollapse.dta", replace
 
 * 2nd dataset: STATE - ONLY RURAL AREAS
 clear
@@ -249,7 +249,7 @@ append using "$state_rural\state_rural_labor_demand_`i'.dta"
 forvalues i=405(1)419 {
 append using "$state_rural\state_rural_labor_demand_`i'.dta"	
 }
-save "$main_folder/data/final_datasets/state_rural_labor_demand_2005_2019_storecollapse.dta", replace
+save "$main_folder/data/final_datasets/raw/state_rural_labor_demand_2005_2019_storecollapse.dta", replace
 
 * 3rd dataset: NATIONAL - RURAL & URBAN AREAS
 clear
@@ -266,7 +266,7 @@ append using "$national\national_labor_demand_`i'.dta"
 forvalues i=405(1)419 {
 append using "$national\national_labor_demand_`i'.dta"	
 }
-save "$main_folder/data/final_datasets/national_labor_demand_2005_2019_storecollapse.dta", replace
+save "$main_folder/data/final_datasets/raw/national_labor_demand_2005_2019_storecollapse.dta", replace
 
 
 * 4th dataset: NATIONAL - ONLY RURAL AREAS 
@@ -284,26 +284,4 @@ append using "$national_rural\national_rural_labor_demand_`i'.dta"
 forvalues i=405(1)419 {
 append using "$national_rural\national_rural_labor_demand_`i'.dta"	
 }
-save "$main_folder/data/final_datasets/national_rural_labor_demand_2005_2019_storecollapse.dta", replace
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+save "$main_folder/data/final_datasets/raw/national_rural_labor_demand_2005_2019_storecollapse.dta", replace
