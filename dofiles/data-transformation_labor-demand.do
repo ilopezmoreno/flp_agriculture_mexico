@@ -149,7 +149,8 @@ label var entity_name "National identificator"
 label define entity_name 50 "National average"
 label value entity_name entity_name
 
-order year quarter entity_name country_labor_demand 
+egen year_q = concat(year quarter), punct(.) 
+order year quarter year_q entity_name country_labor_demand 
 sort  year quarter
 
 save "$tidy/national_labor_demand_2005_2019.dta", replace
@@ -187,7 +188,8 @@ label var entity_name "National identificator"
 label define entity_name 50 "National average"
 label value entity_name entity_name
 
-order year quarter entity_name country_rural_labor_demand 
+egen year_q = concat(year quarter), punct(.) 
+order year quarter year_q entity_name country_rural_labor_demand 
 sort  year quarter
 
 save "$tidy/national_rural_labor_demand_2005_2019.dta", replace

@@ -1,8 +1,7 @@
 cd "$main_folder"
 
-global store_machinery = "$main_folder\data\store_collapse\agri_machinery"
-global state "$store_machinery\state"
-global national "$store_machinery\national"
+global state "$main_folder\data\store_collapse\agri_machinery\state"
+global national "$main_folder\data\store_collapse\agri_machinery\national"
 
 local X /// 
 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 /// datasets from the 1st quarter of 2005 to 2019 
@@ -61,7 +60,6 @@ label define P4A_Sector 1 "Primary Sector" 2 "Secondary Sector" 3 "Terciary Sect
 label value P4A_Sector P4A_Sector
 tab P4A_Sector // Data quality check. Result: 0 missing values
 
-
 * ////////////////////////////////////////////////////////////////////////////////////////////////////// * 
 * Identify Agricultural Machinery Operators and estimate agricultural machinery ratio at the state level * 
 * ////////////////////////////////////////////////////////////////////////////////////////////////////// *  
@@ -88,13 +86,11 @@ restore
 clear
 }
 
-
 *******************
 * Append datasets *
 *******************
 
 * State level 
-
 clear
 use "$state\state_agri_mach_ratio_105.dta"
 forvalues i=106(1)119 {
@@ -111,23 +107,19 @@ append using "$state\state_agri_mach_ratio_`i'.dta"
 }
 save "$main_folder/data/final_datasets/raw/state_agri_mach_ratio_2005_2019_storecollapse.dta", replace
 
-
-
 * National level 
-
 clear
 use "$national\national_agri_mach_ratio_105.dta"
 forvalues i=106(1)119 {
-append using "$state\national_agri_mach_ratio_`i'.dta"	
+append using "$national\national_agri_mach_ratio_`i'.dta"	
 }
 forvalues i=205(1)219 {
-append using "$state\national_agri_mach_ratio_`i'.dta"	
+append using "$national\national_agri_mach_ratio_`i'.dta"	
 }
 forvalues i=305(1)319 {
-append using "$state\national_agri_mach_ratio_`i'.dta"	
+append using "$national\national_agri_mach_ratio_`i'.dta"	
 }
 forvalues i=405(1)419 {
-append using "$state\national_agri_mach_ratio_`i'.dta"	
+append using "$national\national_agri_mach_ratio_`i'.dta"	
 }
 save "$main_folder/data/final_datasets/raw/national_agri_mach_ratio_2005_2019_storecollapse.dta", replace
-

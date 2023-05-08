@@ -43,3 +43,5 @@ capture mkdir regressions
 cd "$main_folder/outputs/graphs"
 capture mkdir gph
 capture mkdir jpg 
+capture mkdir excel 
+

@@ -2,9 +2,9 @@ global state_rural_labor_demand "$main_folder\data\final_datasets\tidy"
 global graphs_gph "$main_folder\outputs\graphs\gph"
 global graphs_jpg "$main_folder\outputs\graphs\jpg"
 
-///////////
-* GRAPH 1 *
-///////////
+////////////////////////////////////
+* GRAPH - State Rural Labor Demand *
+////////////////////////////////////
 
 cd "$state_rural_labor_demand"
 use state_rural_labor_demand_2005_2019

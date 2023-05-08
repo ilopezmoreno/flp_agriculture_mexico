@@ -1,0 +1,19 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: hbargraph_g
+*! family: bar
+*! date:  8 May 2023
+*! time: 13:50:46
+*! graph_scheme: s2color
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.plotregion1.bars[15].EditCustomStyle , j(-1) style(shadestyle(color(red)))
+.plotregion1.bars[15].EditCustomStyle , j(-1) style(linestyle(color(red)))
+// bars[15] color
+
+
+// <end>
