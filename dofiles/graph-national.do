@@ -1,4 +1,5 @@
 clear 
+
 global main_folder "C:\Users\d57917il\Documents\GitHub\flp_agriculture_mexico"
 
 global graphs_gph "$main_folder\outputs\graphs\gph"
@@ -94,3 +95,16 @@ gr_edit .title.DragBy .4673043228862547 1.401912968658771
 graph save "Graph" "$graphs_gph\national_labordemand.gph", replace
 graph export "$graphs_jpg\national_labordemand.png", replace
 
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+* GRAPH - Percentage of women working in agriculture as a proportion of all people working in agriculture  
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+clear 
+cd "$main_folder\data\final_datasets\tidy"
+use national_sex_agri_2005_2019

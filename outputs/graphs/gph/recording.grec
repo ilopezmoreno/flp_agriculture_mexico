@@ -1,9 +1,9 @@
 StataFileTM:00001:01100:GREC:                          :
 00007:00007:00001:
-*! classname: hbargraph_g
-*! family: bar
-*! date:  8 May 2023
-*! time: 13:50:46
+*! classname: bygraph_g
+*! family: by
+*! date: 10 May 2023
+*! time: 14:16:14
 *! graph_scheme: s2color
 *! naturallywhite: 1
 *! end
@@ -11,9 +11,8 @@ StataFileTM:00001:01100:GREC:                          :
 // File created by Graph Editor Recorder.
 // Edit only if you know what you are doing.
 
-.plotregion1.bars[15].EditCustomStyle , j(-1) style(shadestyle(color(red)))
-.plotregion1.bars[15].EditCustomStyle , j(-1) style(linestyle(color(red)))
-// bars[15] color
+.l1title.draw_view.setstyle, style(no)
+// left 1 edits
 
 
 // <end>

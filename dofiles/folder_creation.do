@@ -13,6 +13,7 @@ cd "$main_folder/data"
 capture mkdir store_collapse 
 capture mkdir tempfiles 
 capture mkdir final_datasets
+capture mkdir excel_official-data
 
 cd "$main_folder/data/final_datasets"
 capture mkdir raw
@@ -31,6 +32,10 @@ capture mkdir national
 capture mkdir national_rural 
 
 cd "$main_folder/data/store_collapse/agri_machinery"
+capture mkdir state 
+capture mkdir national 
+
+cd "$main_folder/data/store_collapse/pct_flp_agri"
 capture mkdir state 
 capture mkdir national 
 

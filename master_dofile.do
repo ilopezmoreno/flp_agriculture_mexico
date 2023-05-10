@@ -22,6 +22,10 @@ do "data-estimation_agri-machinery.do"
 cd "$main_folder/dofiles"
 do "data-transformation_agri-machinery.do"
 
+////////////// FEMALE LABOUR PARTICIPATION //////////////
+cd "$main_folder/dofiles"
+do "data-estimation_flp.do"
+
 ////////// GRAPHS //////////
 * STATE RURAL LABOR DEMAND 
 cd "$main_folder/dofiles"
